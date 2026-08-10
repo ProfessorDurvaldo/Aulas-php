@@ -17,8 +17,10 @@
             <input type="password" name="senha" id="senha">
         </div>
         <?php
-            if (isset($_GET['erro'])) {
-                echo "<p style='color:red;'>Usuario ou senha Invalidos</p>";
+            session_start();
+            if (isset($_SESSION['erro'])) {
+                echo "<p style='color:red;'>{$_SESSION['erro']}</p>";
+                unset($_SESSION['erro']);
             }
         ?>
         <button type="submit">Enviar</button>

@@ -12,7 +12,8 @@
         header("location: dashboard.php");
     } else {
         // Volta para tela de login
-        header("location: formulario.php?erro=1");
+        $_SESSION['erro'] = 'Usuario ou senha Invalidos!';
+        header("location: formulario.php");
     }
 ?>
 
