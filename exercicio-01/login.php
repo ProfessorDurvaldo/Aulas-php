@@ -28,13 +28,12 @@
     if ($usuario) {
         // Pode ir para dashboard
         $_SESSION['logado'] = true;
-        $_SESSION['nivel'] = $usuario['nivel'];
         $_SESSION['nome'] = $usuario['nome'];
+        $_SESSION['nivel'] = $usuario['nivel'];
         header("location: dashboard.php");
     } else {
         // Volta para tela de login
         $_SESSION['erro'] = 'Usuario ou senha Invalidos!';
-        header("location: formulario.php");
+        header("location: index.php");
     }
 ?>
-
