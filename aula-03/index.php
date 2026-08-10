@@ -11,10 +11,10 @@ $pdo = new PDO(
 );
 
 // simulacao
-$emailDigitado = "durvaldo@gmail.com";
-$senhaDigitada = '321';
+$emailDigitado = "mariana@gmail.com";
+$senhaDigitada = '123';
 
-$stmt = $pdo->query("SELECT * FROM usuarios WHERE email = $emailDigitado and senha = $senhaDigitada");
+$stmt = $pdo->query("SELECT * FROM usuarios WHERE email = '$emailDigitado' and senha = $senhaDigitada");
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<pre>";
