@@ -50,7 +50,7 @@
                 <td><?= $usuario['email'] ?></td>
                 <td><?= $usuario['nivel'] ?></td>
                 <td>
-                    <a href="editar-usuario.php">
+                    <a href="editar-usuario.php?id=<?= $usuario['id']?>">
                         <button>Editar</button>
                     </a>
                 </td>
