@@ -33,30 +33,34 @@
 <?php if ($_SESSION['nivel'] == 'admin') { ?>
     <h3>Tabela de usuarios</h3>
 
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>nome</th>
+                <th>email</th>
                 <th>nivel</th>
                 <th>editar</th>
                 <th>apagar</th>
             </tr>
         </thead>
         <tbody>
-            foreach
+            <?php foreach ($usuarios as $usuario) { ?>
             <tr>
-                <td>$usuario['nome']</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $usuario['nome'] ?></td>
+                <td><?= $usuario['email'] ?></td>
+                <td><?= $usuario['nivel'] ?></td>
+                <td>
+                    <a href="editar-usuario.php">
+                        <button>Editar</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="apagar-usuario.php?id=<?= $usuario['id']?>">
+                        <button>Apagar</button>
+                    </a>
+                </td>
             </tr>
-            fim foreach
+            <?php } ?>
         </tbody>
     </table>
-
-    <ul>
-        <?php foreach ($usuarios as $usuario) { ?>
-            <li> <?= $usuario['nome'] . ' - ' . $usuario['nivel'] ?> </li>
-        <?php } ?>
-    </ul>
 <?php } ?>
