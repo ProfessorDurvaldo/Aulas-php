@@ -28,6 +28,7 @@
     if ($usuario) {
         // Pode ir para dashboard
         $_SESSION['logado'] = true;
+        $_SESSION['id'] = $usuario['id'];
         $_SESSION['nome'] = $usuario['nome'];
         $_SESSION['nivel'] = $usuario['nivel'];
         header("location: dashboard.php");
